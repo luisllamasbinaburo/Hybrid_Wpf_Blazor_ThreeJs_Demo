@@ -1,0 +1,15 @@
+﻿@page "/"
+@inject IJSRuntime JS
+@inject ThreeInterop three
+
+<div id="canvas"></div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {           
+            await three.Init(JS);
+        }
+    }
+}
